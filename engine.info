@@ -1,0 +1,9 @@
+; stylesheets
+stylesheets[all][] = fatin.css
+
+; scripts
+scripts[] = fatin.js
+scripts[] = ../../../admin/modules/plugins/library/js/jquery.min.js
+scripts[] = ../../../admin/modules/plugins/library/ui/js/jquery-ui.custom.min.js
+scripts[] = drupal.js
+scripts[] = jquery.corner.js

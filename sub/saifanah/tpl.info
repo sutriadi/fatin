@@ -1,0 +1,14 @@
+; tpl.info
+name = Saifanah
+description = Tableless, multi-column, fixed width theme
+version = 15.2-1.0
+core = 15.2
+build = 19475809092011
+
+; stylesheets[mode][]
+; available mode: all, print
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/custom.css
+
+; scripts
+scripts[] = js/saifanah.js
