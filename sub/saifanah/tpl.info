@@ -4,6 +4,7 @@ description = Tableless, multi-column, fixed width theme
 version = 15.2-1.0
 core = 15.2
 build = 19475809092011
+clone = base
 
 ; stylesheets[mode][]
 ; available mode: all, print

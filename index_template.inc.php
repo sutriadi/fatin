@@ -57,7 +57,8 @@ $top_node = '';
 $bottom_node = '';
 $footer_node = '';
 
-$theme = 'saifanah';
+$theme = variable_get('opac_theme');
+$theme_settings = variable_get('theme_' . $theme . '_settings', defconf_theme(), 'serial');
 $theme_path = $sub . '/' . $theme;
 
 $web_logo = $img . '/fatin-logo.png';
@@ -77,17 +78,37 @@ if (function_exists($theme . '_set_search'))
 else
 	$web_search = set_search();
 
-$engine_info = drupal_parse_info_file($path . '/engine.info');
-$prestyles = set_prestyles(isset($engine_info['stylesheets']) ? $engine_info['stylesheets'] : array());
-$prescripts = set_prescripts(isset($engine_info['scripts']) ? $engine_info['scripts'] : array());
+$engine_info = @drupal_parse_info_file($path . '/engine.info');
+$styles = set_styles_array(isset($engine_info['stylesheets']) ? $engine_info['stylesheets'] : array(), $css);
+$scripts = set_scripts_array(isset($engine_info['scripts']) ? $engine_info['scripts'] : array(), $js);
 
-$theme_info = drupal_parse_info_file($path . sprintf('/sub/%s/tpl.info', $theme));
-$page_styles = set_pagestyles(isset($theme_info['stylesheets']) ? $theme_info['stylesheets'] : array());
-$page_scripts = set_pagescripts(isset($theme_info['scripts']) ? $theme_info['scripts'] : array());
+$theme_info = @drupal_parse_info_file($theme_path . '/tpl.info');
+$clone = isset($theme_info['clone']) ? true : false;
+
+if ($clone === true)
+{
+	$clone_path = $sub . '/' . $theme_info['clone'];
+	$clone_info = @drupal_parse_info_file($clone_path . '/tpl.info');
+	
+	$styles = array_merge($styles, set_styles_array(isset($clone_info['stylesheets']) ? $clone_info['stylesheets'] : array(), $clone_path));
+	$scripts = array_merge($scripts, set_scripts_array(isset($clone_info['scripts']) ? $clone_info['scripts'] : array(), $clone_path));
+}
+
+$styles = array_merge($styles, set_styles_array(isset($theme_info['stylesheets']) ? $theme_info['stylesheets'] : array(), $theme_path));
+$scripts = array_merge($scripts, set_scripts_array(isset($theme_info['scripts']) ? $theme_info['scripts'] : array(), $theme_path));
+
+$page_styles = set_pagestyles($styles);
+$page_scripts = set_pagescripts($scripts);
+
 $webicon = set_webicon(isset($theme_info['webicon']) ? $theme_info['webicon'] : $img . '/fatin.ico');
 $page_metadata = set_pagemeta($metadata);
 
 if ( ! file_exists($theme_path . '/page.php'))
-	include($core . '/base/page.php');
+{
+	if ($clone === true AND file_exists($clone_path . '/page.php'))
+		@include($clone_path . '/page.php');
+	else
+		@include($core . '/base/page.php');
+}
 else
-	include($theme_path . '/page.php');
+	@include($theme_path . '/page.php');

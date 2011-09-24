@@ -32,41 +32,9 @@ function set_pagetitle($page_title)
 	return $page_title;
 }
 
-function set_prescripts($scripts)
+function set_styles_array($styles, $dir)
 {
-	global $js;
-	
-	$output = '';
-	if (count($scripts) > 0)
-	{
-		foreach ($scripts as $js_file)
-		{
-			$output .= '<script type="text/javascript" src="'. $js . '/' . $js_file .'"></script>'."\n";
-		}
-	}
-	return $output;
-}
-
-function set_pagescripts($scripts)
-{
-	global $theme_path, $prescripts;
-	
-	$output = ( ! empty($prescripts)) ? $prescripts : '';
-	if (count($scripts) > 0)
-	{
-		foreach ($scripts as $js_file)
-		{
-			$output .= '<script type="text/javascript" src="'. $theme_path . '/' . $js_file .'"></script>'."\n";
-		}
-	}
-	return $output;
-}
-
-function set_prestyles($styles)
-{
-	global $css;
-	
-	$output = '';
+	$output = array();
 	if (count($styles) > 0)
 	{
 		foreach ($styles as $media => $style)
@@ -75,7 +43,10 @@ function set_prestyles($styles)
 			{
 				foreach ($style as $css_file)
 				{
-					$output .= '<link type="text/css" rel="stylesheet" media="'. $media .'" href="'. $css . '/' . $css_file .'" />'."\n";
+					$output[] = array(
+						'media' => $media,
+						'href' => $dir . '/' . $css_file
+					);
 				}
 			}
 		}
@@ -83,24 +54,54 @@ function set_prestyles($styles)
 	return $output;
 }
 
-function set_pagestyles($styles)
+function set_scripts_array($scripts, $dir)
 {
-	global $theme_path, $prestyles;
-	
-	$output = ( ! empty($prestyles)) ? $prestyles : '';
-	if (count($styles) > 0)
+	$output = array();
+	if (count($scripts) > 0)
 	{
-		foreach ($styles as $media => $css)
+		foreach ($scripts as $js_file)
 		{
-			if (is_array($css) AND count($css) > 0)
-			{
-				foreach ($css as $css_file)
-				{
-					$output .= '<link type="text/css" rel="stylesheet" media="'. $media .'" href="'. $theme_path . '/' . $css_file .'" />'."\n";
-				}
-			}
+			$output[] = array(
+				'src' => $dir . '/' . $js_file
+			);
 		}
 	}
+	return $output;
+	
+}
+
+function set_pagestyles($styles)
+{
+	$output = array();
+	if (count($styles) > 0)
+	{
+		foreach ($styles as $key => $val)
+		{
+			$output[$key] = sprintf('<link type="text/css" rel="stylesheet" media="%s" href="%s" />',
+				$val['media'],
+				$val['href']
+			);
+		}
+	}
+	$output[] = '';
+	$output = implode("\n", $output);
+	return $output;
+}
+
+function set_pagescripts($scripts)
+{
+	$output = array();
+	if (count($scripts) > 0)
+	{
+		foreach ($scripts as $key => $val)
+		{
+			$output[$key] = sprintf('<script type="text/javascript" src="%s"></script>',
+				$val['src']
+			);
+		}
+	}
+	$output[] = '';
+	$output = implode("\n", $output);
 	return $output;
 }
 
