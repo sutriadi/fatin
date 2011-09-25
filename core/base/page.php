@@ -52,13 +52,14 @@ if ( ! defined('INDEX_AUTH') || INDEX_AUTH != 1)
 				<span id="web-title"><a href="index.php" title="<?php echo __('Home'); ?>"><?php echo $web_title;?></a></span>
 				<span id="web-subtitle"><?php echo $web_subtitle;?></span>
 			</div>
-			<?php echo $web_search;?>
+			<?php echo isset($web_search) ? sprintf('<div id="search">%s</div>', $web_search) : '';?>
+			<?php echo isset($web_main_links) ? sprintf('<div id="main-links">%s</div>', $web_main_links) : '';?>
 		</div>
 		
 		<div id="main">
 		
 			<div id="leftbar">
-				<div class="block block-test">
+				<div class="block-test">
 					Left
 				</div>
 				
@@ -93,7 +94,7 @@ if ( ! defined('INDEX_AUTH') || INDEX_AUTH != 1)
 				<div id="nodebar">
 					
 					<div id="top-node">
-						<div class="block block-test">
+						<div class="block-test">
 							Top Node
 						</div>
 					</div>
@@ -103,7 +104,7 @@ if ( ! defined('INDEX_AUTH') || INDEX_AUTH != 1)
 					</div>
 					
 					<div id="bottom-node">
-						<div class="block block-test">
+						<div class="block-test">
 							Bottom Node
 						</div>
 					</div>
@@ -111,7 +112,7 @@ if ( ! defined('INDEX_AUTH') || INDEX_AUTH != 1)
 				</div>
 			
 			<div id="rightbar">
-				<div class="block block-test">
+				<div class="block-test">
 					Right
 				</div>
 				<div class="block icons i-info">
@@ -133,7 +134,7 @@ if ( ! defined('INDEX_AUTH') || INDEX_AUTH != 1)
 		</div>
 		
 		<div id="footer">
-			<div class="block block-test">
+			<div class="block-test">
 				Footer
 			</div>
 			<div id="web-footer-wrapper">

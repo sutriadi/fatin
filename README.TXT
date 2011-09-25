@@ -1,5 +1,5 @@
 Fatin Theme Base for SLiMS
-Version 3.15.2-0.1 alpha build 01123411092011
+Version 3.15.2-0.1 alpha build 21430325092011
 
 Copyright (c) 1432 H / 2011 M
 Indra Sutriadi Pipii (indra@sutriadi.web.id)
@@ -35,3 +35,5 @@ Daily Development: https://github.com/sutriadi/fatin
 - simpan konfigurasi
 
 CHANGELOG
+25.09.2011
+rilis beta: ujicoba kesesuaian dengan submodul menu modul Plugins SLiMS

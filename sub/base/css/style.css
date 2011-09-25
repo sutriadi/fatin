@@ -1,0 +1,225 @@
+/*
+ *      style.css
+ *      
+ *      Copyright 2011 Indra Sutriadi Pipii <indra@sutriadi.web.id>
+ *      
+ *      This program is free software; you can redistribute it and/or modify
+ *      it under the terms of the GNU General Public License as published by
+ *      the Free Software Foundation; either version 2 of the License, or
+ *      (at your option) any later version.
+ *      
+ *      This program is distributed in the hope that it will be useful,
+ *      but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *      GNU General Public License for more details.
+ *      
+ *      You should have received a copy of the GNU General Public License
+ *      along with this program; if not, write to the Free Software
+ *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ *      MA 02110-1301, USA.
+ */
+
+/*
+ * general formatting
+ */
+body {
+	padding: 0;
+	margin: 0;
+	font-family: Arial, Tahoma, Verdana, sans;
+	font-size: 80%;
+}
+
+/*
+ * formatting design and layout
+ */
+
+#container {
+	width: 960px;
+	margin: 0 auto;
+	padding: 0 10px;
+	padding-bottom: 20px;
+	margin-bottom: 5px;
+}
+
+#header {
+	width: 100%;
+	padding: 10px 0;
+}
+
+#header #logo {
+	margin: 0 15px 0 0;
+}
+
+#header #web-name-wrapper {
+}
+
+#header #web-name-wrapper span {
+	display: block;
+}
+
+#header #search {
+	padding: 3px 0;
+}
+
+#web-name-wrapper #web-title {
+	font-size: 24pt;
+}
+
+#web-name-wrapper #web-subtitle {
+	font-size: 12pt;
+	font-style: italic;
+}
+
+#main {
+	width: 100%;
+	clear: both;
+}
+
+#leftbar {
+	width: 25%;
+	float: left;
+	padding: 10px 0;
+}
+
+#leftbar .block {
+	margin: 10px auto;
+}
+
+#leftbar .block .header {
+	padding: 5px 2px;
+	margin: 0;
+}
+
+#leftbar .block .content {
+	padding: 5px 3px;
+}
+
+#rightbar {
+	width: 20%;
+	float: right;
+	padding: 10px 0;
+}
+
+#rightbar .block {
+	margin: 10px auto;
+}
+
+#rightbar .block .header {
+	padding: 5px 2px;
+	margin: 0;
+}
+
+#rightbar .block .content {
+	padding: 5px 3px;
+}
+
+#nodebar {
+	width: 52%;
+	float: left;
+	padding: 0 10px;
+}
+
+#top-node {
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+#main-node {
+	padding: 10px;
+}
+
+#bottom-node {
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+#footer {
+	width: 100%;
+	clear: both;
+	padding-top: 3px;
+}
+
+#footer .block {
+	margin: 10px auto;
+}
+
+#web-footer-wrapper span {
+	display: block;
+}
+
+#web-footer-wrapper {
+	padding: 10px;
+	text-align: center;
+}
+
+/*
+ * Formatting links
+ */
+ul.links {
+}
+
+ul.links li {
+	margin: 0;
+	padding: 0;
+}
+
+ul.main-links {
+	padding: 3px;
+}
+
+ul.main-links li {
+	float: left;
+	display: block;
+	padding: 0 3px;
+}
+
+ul.links li.first {
+}
+
+ul.links li.last {
+}
+
+ul.links li.active {
+}
+
+/*
+ * Formatting SLiMS content and layout
+ */
+div.biblioPaging {
+}
+
+span.pagingList {	
+}
+
+div.item {
+	padding-left: 50px;
+	padding-top: 0;
+	margin-bottom: 10px;
+}
+
+div.alterList {
+}
+
+div.alterList2 {
+}
+
+div.item a {
+}
+
+div.item div.subItem {
+}
+
+div.item div.authorField {
+}
+
+div.item div.authorField b {
+}
+
+div.item div.subItem a {
+}
+
+div.item div.subItem a.detailLink {
+}
+
+div.item div.subItem a.xmlDetailLink {
+}

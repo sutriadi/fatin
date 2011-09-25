@@ -39,8 +39,11 @@ $detail = FALSE;
 
 $osys = (object) $sysconf;
 
+if ( ! defined('MODPLUGINS_BASE_DIR'))
+	define('MODPLUGINS_BASE_DIR', MODULES_BASE_DIR . 'plugins/');
+
 require($path . '/php/function.php');
-require(MODULES_BASE_DIR . 'plugins/func.php');
+require(MODPLUGINS_BASE_DIR . 'func.php');
 
 $page_title = set_pagetitle($page_title);
 $lang = substr($osys->default_lang, 0, 2);
@@ -58,7 +61,7 @@ $bottom_node = '';
 $footer_node = '';
 
 $theme = variable_get('opac_theme');
-$theme_settings = variable_get('theme_' . $theme . '_settings', defconf_theme(), 'serial');
+$theme_settings = (object) variable_get('theme_' . $theme . '_settings', defconf_theme(), 'serial');
 $theme_path = $sub . '/' . $theme;
 
 $web_logo = $img . '/fatin-logo.png';
@@ -71,12 +74,29 @@ if (file_exists($theme_path . '/fatin.php'))
 	require($theme_path . '/fatin.php');
 }
 
-if (function_exists($theme . '_set_search'))
+if (isset($theme_settings->main_links) AND $theme_settings->main_links == 'on')
 {
-	$web_search = call_user_func($theme . '_set_search');
+	require(MODPLUGINS_BASE_DIR . 's_menus/func.php');
+	$main_links = variable_get('main_links', 'primary-links');
+	$main_links_items = variable_get('main_links_items', 'top');
+	
+/*
+	$main_links_array = set_parent_array($main_links, false, false, 0, 0, ($main_links_items == 'top' ? false : true), true, '');
+*/
+	$expand = $main_links_items == 'top' ? false : true;
+	$main_links_items = menu_items_get($main_links);
+	$web_main_links = menu_build_links($main_links_items, 0, $expand, 'main-links');
 }
-else
-	$web_search = set_search();
+
+if (isset($theme_settings->search) AND $theme_settings->search == 'on')
+{
+	if (function_exists($theme . '_set_search'))
+	{
+		$web_search = call_user_func($theme . '_set_search');
+	}
+	else
+		$web_search = set_search();
+}
 
 $engine_info = @drupal_parse_info_file($path . '/engine.info');
 $styles = set_styles_array(isset($engine_info['stylesheets']) ? $engine_info['stylesheets'] : array(), $css);

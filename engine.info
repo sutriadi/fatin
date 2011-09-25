@@ -1,3 +1,7 @@
+; general information
+version = 3.15.2-0.1
+build = 21430325092011
+
 ; stylesheets
 stylesheets[all][] = fatin.css
 
