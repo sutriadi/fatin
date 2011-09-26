@@ -1,5 +1,5 @@
 Fatin Theme Base for SLiMS
-Version 3.15.2-0.1 alpha build 21430325092011
+Version 3.15.2-0.1 RC1 build 22203926092011
 
 Copyright (c) 1432 H / 2011 M
 Indra Sutriadi Pipii (indra@sutriadi.web.id)
@@ -9,7 +9,7 @@ Daily Development: https://github.com/sutriadi/fatin
 
 # Persyaratan System
 - SLiMS 3 Stable 15 "Matoa" (download di http://slims.web.id/)
-- Modul Plugins SLiMS 3.15-2.1 "Bongkai" (download di
+- Modul Plugins SLiMS 3.15-2.1 "Nantu" (download di
   http://sutriadi.web.id/)
 
 # Instalasi
@@ -35,5 +35,5 @@ Daily Development: https://github.com/sutriadi/fatin
 - simpan konfigurasi
 
 CHANGELOG
-25.09.2011
-rilis beta: ujicoba kesesuaian dengan submodul menu modul Plugins SLiMS
+26.09.2011
+Kandidat Rilis 1

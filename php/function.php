@@ -156,3 +156,62 @@ function set_pagemeta($meta)
 	$metadata = $webicon . $meta;
 	return $metadata;
 }
+
+function add_class_block($params)
+{
+	$classes = implode(' ',
+		array_merge(
+			array(
+				'block',
+				$params['block'],
+				$params['delta']
+			),
+			$params['classes']
+		)
+	);
+	return $classes;	
+}
+
+function render_block($params)
+{
+	$classes = add_class_block($params);
+	$header = (isset($params['title']) AND ! empty($params['title'])) ?
+		sprintf('<h3 class="header">%s</h3>', __($params['title'])) : '';
+	$content = sprintf('<div class="content">%s</div>',
+		(isset($params['content']) AND ! empty($params['content'])) ? $params['content'] : ''
+	);
+	$block = sprintf('<div class="%s">%s%s</div>',
+		$classes,
+		$header,
+		$content
+	);
+	return $block;
+}
+
+function set_pageregions($blocks)
+{
+	global $theme;
+	
+	$regions = array();
+	if (function_exists($theme . '_render_block'))
+		$func_render_block = $theme . '_render_block';
+	else
+		$func_render_block = 'render_block';
+	foreach ($blocks as $region => $region_items)
+	{
+		if (is_array($region_items) AND count($region_items) > 0)
+		{
+			$regions[$region] = array();
+			foreach ($region_items as $params)
+			{
+				$func = 'block_' . $params['block'];
+				$args = array('view', $params['delta']);
+				$main_block = call_user_func($func, 'view', $params['delta']);
+				$merged = array_merge($main_block[$params['delta']], $params);
+				$regions[$region][] = render_block($merged);
+			}
+			$regions[$region] = implode("\n", $regions[$region]);
+		}
+	}
+	return $regions;
+}

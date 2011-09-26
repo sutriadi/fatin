@@ -75,10 +75,17 @@ body {
 	clear: both;
 }
 
-#leftbar {
+div#container.left #leftbar,
+div#container.both #leftbar {
 	width: 25%;
 	float: left;
 	padding: 10px 0;
+}
+
+div#container.none #leftbar,
+div#container.right #leftbar {
+	width: 0%;
+	display: none;
 }
 
 #leftbar .block {
@@ -94,10 +101,17 @@ body {
 	padding: 5px 3px;
 }
 
-#rightbar {
+div#container.right #rightbar,
+div#container.both #rightbar {
 	width: 20%;
 	float: right;
 	padding: 10px 0;
+}
+
+div#container.left #rightbar,
+div#container.none #rightbar {
+	width: 0%;
+	display: none;
 }
 
 #rightbar .block {
@@ -114,9 +128,29 @@ body {
 }
 
 #nodebar {
-	width: 52%;
 	float: left;
 	padding: 0 10px;
+}
+
+div#container.left #nodebar {
+	width: 72%;
+	float: right;
+	padding-right: 0;
+}
+
+div#container.right #nodebar {
+	width: 77%;
+	padding-left: 0;
+}
+
+div#container.both #nodebar {
+	width: 52%;
+}
+
+div#container.none #nodebar {
+	width: 100%;
+	padding: 0;
+	clear: both;
 }
 
 #top-node {
@@ -150,6 +184,23 @@ body {
 #web-footer-wrapper {
 	padding: 10px;
 	text-align: center;
+}
+
+/*
+ * Formatting core blocks
+ */
+div.block label {
+	display: block;
+}
+
+div.advanced_search input,
+div.advanced_search select {
+	max-width: 100%;
+}
+
+label {
+	cursor: pointer;
+	cursor: hand;
 }
 
 /*

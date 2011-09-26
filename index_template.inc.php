@@ -123,6 +123,23 @@ $page_scripts = set_pagescripts($scripts);
 $webicon = set_webicon(isset($theme_info['webicon']) ? $theme_info['webicon'] : $img . '/fatin.ico');
 $page_metadata = set_pagemeta($metadata);
 
+$info = $theme_info;
+require(MODPLUGINS_BASE_DIR . 's_blocks/func.php');
+$regions = block_all_list();
+unset($regions['none']);
+
+$enabled_region = array_keys($regions);
+if (in_array('left', $enabled_region) AND in_array('right', $enabled_region))
+	$layout_class = 'both';
+else if (in_array('left', $enabled_region))
+	$layout_class = 'left';
+else if (in_array('right', $enabled_region))
+	$layout_class = 'right';
+else
+	$layout_class = 'none';
+
+$blocks = set_pageregions($regions);
+
 if ( ! file_exists($theme_path . '/page.php'))
 {
 	if ($clone === true AND file_exists($clone_path . '/page.php'))

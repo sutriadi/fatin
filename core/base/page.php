@@ -39,12 +39,10 @@ if ( ! defined('INDEX_AUTH') || INDEX_AUTH != 1)
 </head>
 <body>
 
-	<div id="container">
+	<div id="container" class="<?php echo $layout_class; ?>">
 		
 		<div id="header">
-			<div class="block block-test">
-				Header
-			</div>
+			<?php if(isset($regions['header'])):?><?php echo $blocks['header'];?><?php endif;?>
 			<div id="logo">
 				<a href="index.php" title="<?php echo __('Home'); ?>"><img src="<?php echo $web_logo;?>" /></a>
 			</div>
@@ -58,85 +56,35 @@ if ( ! defined('INDEX_AUTH') || INDEX_AUTH != 1)
 		
 		<div id="main">
 		
-			<div id="leftbar">
-				<div class="block-test">
-					Left
-				</div>
-				
-				<div class="block icons i-lang">
-					<h3 class="header"><?php echo __('Language');?></h3>
-					<div class="content">
-						Block Content Left
-					</div>
-				</div>
-
-				<div class="block dark icons i-srch">
-					<h3 class="header">Search</h3>
-					<div class="content">
-						Block Content Left
-					</div>
-				</div>
-
-				<div class="block">
-					<div class="content">
-						Block Content Left
-					</div>
-				</div>
-
-				<div class="block dark">
-					<div class="content">
-						Block Content Left
-					</div>
-				</div>
-
-			</div>
+			<?php if (isset($regions['left'])):?><div id="leftbar">
+				<?php echo $blocks['left'];?>
+			</div><?php endif;?>
 
 				<div id="nodebar">
 					
-					<div id="top-node">
-						<div class="block-test">
-							Top Node
-						</div>
-					</div>
+					<?php if (isset($regions['top-node'])):?><div id="top-node">
+						<?php echo $blocks['top-node'];?>
+					</div><?php endif;?>
 					
 					<div id="main-node">
 						<?php echo $node;?>
 					</div>
 					
-					<div id="bottom-node">
-						<div class="block-test">
-							Bottom Node
-						</div>
-					</div>
+					<?php if (isset($regions['bottom-node'])):?><div id="bottom-node">
+						<?php echo $blocks['bottom-node'];?>
+					</div><?php endif;?>
 					
 				</div>
 			
-			<div id="rightbar">
-				<div class="block-test">
-					Right
-				</div>
-				<div class="block icons i-info">
-					<h3 class="header">Block Header</h3>
-					<div class="content">
-						Block Content Right
-					</div>
-				</div>
-
-				<div class="block dark">
-					<h3 class="header">Block Header</h3>
-					<div class="content">
-						Block Content Left
-					</div>
-				</div>
-
-			</div>
+			<?php if (isset($regions['right'])):?><div id="rightbar">
+				<?php echo $blocks['right'];?>
+			</div><?php endif;?>
 		
 		</div>
 		
 		<div id="footer">
-			<div class="block-test">
-				Footer
-			</div>
+			
+			<?php if (isset($regions['footer'])):?><?php echo $blocks['footer'];?><?php endif;?>
 			<div id="web-footer-wrapper">
 				<span id="web-footer"><?php echo $web_footer;?></span>
 				<span><strong>Fatin Core Template</strong> by <a href="http://sutriadi.web.id/" target="_blank">Indra Sutriadi Pipii</a></span>
