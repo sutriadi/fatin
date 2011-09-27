@@ -105,6 +105,23 @@ function set_pagescripts($scripts)
 	return $output;
 }
 
+function set_stringscripts($scripts)
+{
+	$output = array();
+	if (count($scripts) > 0)
+	{
+		foreach ($scripts as $val)
+		{
+			$output[] = sprintf('<script type="text/javascript">%s</script>',
+				$val
+			);
+		}
+	}
+	$output[] = '';
+	$output = implode("\n", $output);
+	return $output;
+}
+
 function set_search()
 {
 	$q = '';

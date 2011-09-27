@@ -93,5 +93,9 @@ if ( ! defined('INDEX_AUTH') || INDEX_AUTH != 1)
 		
 	</div>
 
+	<?php if ($detail === TRUE):?><div id="fileviewer">
+			<iframe id="framehtml" src=""></iframe>
+	</div><?php endif;?>
+
 </body>
 </html>

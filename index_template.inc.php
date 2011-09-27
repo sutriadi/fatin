@@ -36,6 +36,8 @@ $sub = $path . "/sub";
 $search = FALSE;
 $page = FALSE;
 $detail = FALSE;
+if (isset($_GET['p']) AND $_GET['p'] == 'show_detail')
+	$detail = TRUE;
 
 $osys = (object) $sysconf;
 
@@ -113,12 +115,44 @@ if ($clone === true)
 	$styles = array_merge($styles, set_styles_array(isset($clone_info['stylesheets']) ? $clone_info['stylesheets'] : array(), $clone_path));
 	$scripts = array_merge($scripts, set_scripts_array(isset($clone_info['scripts']) ? $clone_info['scripts'] : array(), $clone_path));
 }
+if ( ! isset($theme_info['stylesheets']))
+	$theme_info['stylesheets'] = array();
+$theme_info['stylesheets']['all'][] = '../../../../admin/modules/plugins/'. css_get();
 
 $styles = array_merge($styles, set_styles_array(isset($theme_info['stylesheets']) ? $theme_info['stylesheets'] : array(), $theme_path));
 $scripts = array_merge($scripts, set_scripts_array(isset($theme_info['scripts']) ? $theme_info['scripts'] : array(), $theme_path));
 
 $page_styles = set_pagestyles($styles);
 $page_scripts = set_pagescripts($scripts);
+
+if ($detail === true)
+{
+	$aturl = SENAYAN_WEB_ROOT_DIR.'lib/contents/attachment_list.php';
+	$iturl = SENAYAN_WEB_ROOT_DIR.'lib/contents/item_list.php';
+	$data = sprintf('id=%s&ajaxsec_user=%s&ajaxsec_passwd=%s',
+		isset($_GET['id']) ? $_GET['id'] : 0,
+		$osys->ajaxsec_user,
+		$osys->ajaxsec_passwd
+	);
+	
+	$strscripts = array();
+	$ajax_tpl = '$.ajax({ url: %s, type: %s, data: %s, success: function(data) { '
+				. '$(%s).html(data); '
+				. '$( "%s" ).attr(%s, %s); '
+			. ' }, '
+		. ' }); ';
+	$strscripts[] = sprintf($ajax_tpl, "'$aturl'", "'POST'", "'$data'",
+		"'#attachListLoad'",
+		"a[href='#']", "'href'", "'#refviewer'"
+	);
+
+	$strscripts[] = sprintf($ajax_tpl, "'$iturl'", "'POST'", "'$data'",
+		"'#itemListLoad'",
+		"a[href='#']", "'href'", "'#refviewer'"
+	);
+	
+	$page_scripts .= set_stringscripts(array(sprintf('Drupal.behaviors.fatinDetail = function (context) { %s }', implode("\n", $strscripts))));
+}	
 
 $webicon = set_webicon(isset($theme_info['webicon']) ? $theme_info['webicon'] : $img . '/fatin.ico');
 $page_metadata = set_pagemeta($metadata);
