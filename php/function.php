@@ -127,7 +127,7 @@ function set_search()
 	$q = '';
 	if (isset($_GET['keywords']))
 		$q = trim($_GET['keywords']);
-	$websearch = '<form action="index.php" accept-charset="UTF-8" method="get" id="search-theme-form">'
+	$websearch = '<form action="index.php" accept-charset="UTF-8" method="get" id="search-feature-theme-form">'
 		. '<input maxlength="128" name="keywords" value="' . $q . '" size="30" class="form-search-text" type="text" />'
 		. '<input name="search" value="' . __('Search') . '" class="form-search-input" type="submit" />'
 		. '</form>';

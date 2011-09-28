@@ -1,0 +1,74 @@
+Poyowa SLiMS Theme Additional CSS Cheat Sheet
+--
+by Indra Sutriadi Pipii
+http://sutriadi.web.id/
+indra@sutriadi.web.id
+
+# untuk semua jenis block
+-- gaya tulisan (bisa dikombinasikan)
+t-right
+	isi tulisan rata kanan
+t-justify
+	isi tulisan rata kiri-kanan
+t-center
+	isi tulisan rata tengah
+t-bold
+	isi tulisan huruf tebal
+t-italic
+	isi tulisan huruf miring
+t-underline
+	isi tulisan bergaris bawah
+t-shadow
+	isi tulisan huruf berbayangan
+
+-- gaya sisi block (tidak bisa dikombinasikan)
+corner
+	block dengan semua sudut melengkung radius 5px
+corner-top
+	block dengan sudut sisi atas melengkung radius 5px
+corner-bottom
+	block dengan sudut sisi bawah melengkung radius 5px
+
+-- gaya header block
+-- (berlaku bila title tidak kosong dan tidak bisa dikombinasikan)
+icons i-chat
+	menampilkan ikon chat
+icons i-err
+	menampilkan ikon error
+icons i-fav
+	menampilkan ikon favorit
+icons i-find
+	menampilkan ikon find
+icons i-help
+	menampilkan ikon help
+icons i-home
+	menampilkan ikon home
+icons i-info
+	menampilkan ikon info
+icons i-net
+	menampilkan ikon internet
+icons i-key
+	menampilkan ikon kunci
+icons i-lan
+	menampilkan ikon jaringan
+icons i-search
+	menampilkan ikon search
+icons i-sys
+	menampilkan ikon komputer
+icons i-user
+	menampilkan ikon user
+icons i-warn
+	menampilkan ikon warning
+
+# hanya untuk sidebar kiri dan kanan:
+-- gaya block
+dark
+	block dengan latar gelap
+
+contoh kombinasi:
+corner icons i-chat t-center t-italic t-shadow
+	menampilkan block dengan sudut block melengkung, header ikon chat,
+	dan isi block dengan tulisan yg miring, berbayangan dan rata kanan
+dark corner icons i-search
+	menampilkan block dengan latar belakang gelap, sudut block melengkung,
+	dengan header ikon search

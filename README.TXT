@@ -1,5 +1,5 @@
 Fatin Theme Base for SLiMS
-Version 3.15.2-0.1 RC1 build 22203926092011
+Version 3.15.2-0.1 RC2 build 21490327092011
 
 Copyright (c) 1432 H / 2011 M
 Indra Sutriadi Pipii (indra@sutriadi.web.id)
@@ -13,7 +13,7 @@ Daily Development: https://github.com/sutriadi/fatin
   http://sutriadi.web.id/)
 
 # Instalasi
-- ekstrak paket fatin-15.2.x-0.1 sehingga akan menghasilkan
+- ekstrak paket fatin-3.15.2-x.x sehingga akan menghasilkan
   direktori ./fatin
 - salin direktori fatin hasil ekstraksi ke ./template/
 - login ke administrasi SLiMS, masuk menu System
@@ -35,5 +35,5 @@ Daily Development: https://github.com/sutriadi/fatin
 - simpan konfigurasi
 
 CHANGELOG
-26.09.2011
-Kandidat Rilis 1
+27.09.2011
+Kandidat Rilis 2

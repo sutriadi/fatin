@@ -20,21 +20,19 @@
  *      MA 02110-1301, USA.
  */
 
-function saifanah_set_search($keywords = '')
+function poyowa_set_search($keywords = '')
 {
 	$q = '';
 	if (isset($_GET['keywords']))
 		$q = trim($_GET['keywords']);
-	$websearch = '<div id="search">'
-		. '<form action="index.php" accept-charset="UTF-8" method="get" id="search-theme-form">'
+	$websearch = '<form action="' . SENAYAN_WEB_ROOT_DIR . '" accept-charset="UTF-8" method="get" id="search-feature-theme-form">'
 		. '<input maxlength="128" id="keywords" name="keywords" value="' . $q . '" size="30" class="form-search-text" type="text" />'
 		. '<input name="search" value="' . __('Go Search!') . '" class="form-search-input" type="submit" />'
-		. '</form>'
-		. '</div>';
+		. '</form>';
 	return $websearch;
 }
 
-function saifanah_format_block($block)
+function poyowa_format_block($block)
 {
 	
 }

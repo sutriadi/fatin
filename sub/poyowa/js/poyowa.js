@@ -26,7 +26,7 @@ Drupal.behaviors.saifanah_RoundedCorners = function (context) {
 }
 
 Drupal.behaviors.saifanah_SearchKeywords = function (context) {
-	var keywords = $("input#keywords");
+	var keywords = $("form#search-feature-theme-form input#keywords");
 	keywords.focus(function()
 	{
 		if(keywords.val()=='Keywords')
