@@ -22,7 +22,7 @@
 
 function poyowa_set_search($keywords = '')
 {
-	$q = '';
+	$q = 'keywords';
 	if (isset($_GET['keywords']))
 		$q = trim($_GET['keywords']);
 	$websearch = '<form action="' . SENAYAN_WEB_ROOT_DIR . '" accept-charset="UTF-8" method="get" id="search-feature-theme-form"> '

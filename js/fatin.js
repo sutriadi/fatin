@@ -17,6 +17,55 @@
 //      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 //      MA 02110-1301, USA.
 
+var visitorCounterForm = $('#visitorCounterForm');
+
+// AJAX counter error handler
+visitorCounterForm.ajaxError( function() {
+	alert('Error inserting counter data to database!');
+	$(this).enableForm().find('input[type=text]').val('');
+	$('#memberID').focus();
+});
+
+// AJAX counter complete handler
+visitorCounterForm.ajaxComplete( function() {
+	$(this).enableForm().find('input[type=text]').val('');
+	var memberImage = $('#memberImage');
+	if (memberImage) {
+		// update visitor photo
+		var imageSRC = memberImage.attr('src'); memberImage.remove();
+		$('#visitorCounterPhoto')[0].src = imageSRC;
+	}
+	$('#memberID').focus();
+});
+
+// register event
+visitorCounterForm.submit(function(evt) {
+	evt.preventDefault();
+	// check member ID or name
+	if ($.trim($('#memberID').val()) == '') {
+		$('#counterInfo').html('Please fill your member ID or name');
+		return false;
+	}
+	var theForm = $(this);
+	var formAction = theForm.attr('action');
+	var formData = theForm.serialize();
+	formData += '&counter=true';
+	// block the form
+	theForm.disableForm();
+	$('#counterInfo').css({'display': 'block'}).html('PLEASE WAIT...');
+	// create AJAX request for submitting form
+	$.ajax(
+		{ url: formAction,
+			type: 'POST',
+			async: false,
+			data: formData,
+			cache: false,
+			success: function(respond) {
+				$('#counterInfo').html(respond);
+			}
+		});
+});
+
 $(document).ready(function() {
 
 	var cacheAuthor = {},
@@ -77,6 +126,9 @@ $(document).ready(function() {
 			$( "#framehtml" ).attr('src', '');
 		}
 	});
+
+    // give focus to first field
+    $('#memberID').focus();
 
 });
 

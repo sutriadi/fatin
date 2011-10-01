@@ -7,7 +7,7 @@ if ( ! defined('INDEX_AUTH') || INDEX_AUTH != 1)
 
 ?>
 <!--
-        Fatin Core Template
+        Fatin base theme
         
         Copyright 2011 Indra Sutriadi Pipii <indra@sutriadi.web.id>
         
@@ -37,7 +37,7 @@ if ( ! defined('INDEX_AUTH') || INDEX_AUTH != 1)
 	<?php echo $page_scripts;?>
 	<?php echo $page_metadata;?>
 </head>
-<body>
+<body class="<?php echo $body_class;?>">
 
 	<div id="container" class="<?php echo $layout_class; ?>">
 		
@@ -88,7 +88,7 @@ if ( ! defined('INDEX_AUTH') || INDEX_AUTH != 1)
 			<?php if (isset($regions['footer'])):?><?php echo $blocks['footer'];?><?php endif;?>
 			<div id="web-footer-wrapper">
 				<span id="web-footer"><?php echo $web_footer;?></span>
-				<span><strong>Fatin base theme</strong> by <a href="http://sutriadi.web.id/" target="_blank">Indra Sutriadi Pipii</a></span>
+				<span><strong>Fatin</strong> base theme by <a href="http://sutriadi.web.id/" target="_blank">Indra Sutriadi Pipii</a></span>
 			</div>
 		</div>
 		

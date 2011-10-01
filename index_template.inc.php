@@ -76,6 +76,13 @@ else if (isset($_GET['p']))
 		else
 			$info = $info[0];
 	}
+	if ($_GET['p'] == 'login')
+		$info = __('Sign in to your library account');
+	else if ($_GET['p'] == 'visitor')
+	{
+		$info = __('Check in visitor here');
+	}
+	
 	$node_info = sprintf($div_node_info, $info);
 }
 else
@@ -111,6 +118,9 @@ if (isset($theme_settings->main_links) AND $theme_settings->main_links == 'on')
 	$web_main_links = menu_build_links($main_links_items, 0, $expand, 'main-links');
 }
 
+$body_class = '';
+if (isset($theme_settings->css_names) AND ! empty($theme_settings->css_names))
+	$body_class = $theme_settings->css_names;
 if (isset($theme_settings->logo) AND $theme_settings->search == 'on')
 	$web_logo = $img . '/fatin-logo.png';
 if (isset($theme_settings->title) AND $theme_settings->title == 'on')
@@ -129,6 +139,9 @@ if (isset($theme_settings->search) AND $theme_settings->search == 'on')
 }
 
 $engine_info = @drupal_parse_info_file($path . '/engine.info');
+if (isset($_GET['p']) AND $_GET['p'] == 'visitor')
+	$engine_info['scripts'][] = '../../../js/gui.js';
+
 $styles = set_styles_array(isset($engine_info['stylesheets']) ? $engine_info['stylesheets'] : array(), $css);
 $scripts = set_scripts_array(isset($engine_info['scripts']) ? $engine_info['scripts'] : array(), $js);
 

@@ -419,34 +419,25 @@ div a.xmlResultLink:hover {
 	background: #370D57;
 }
 
-/* Form */
-div.block input.text {
-	width: 90%;
-	margin-bottom: 3px;
-	padding: .2em;
-}
-
-div.block select {
-	padding: .2em 0;
-}
-
-div.block input.button {
-	width: auto;
-	padding: .2em;
-}
-
-div.block.ui-form input,
-div.block.ui-form select
-{
-	padding: .4em;
-}
-
+/* SLiMS Form */
 div.loginInfo {
 	margin: 5px 0;
 }
 
+div#loginForm input,
+#visitorCounterWrap input,
 #memberLogin input {
 	padding: .2em;
+}
+
+#visitorCounterWrap div.info {
+	margin: 5px 0;
+}
+
+#visitorCounterPhoto { margin: 10px 0; }
+
+div.marginTop {
+	margin-top: 10px;
 }
 
 h3.memberInfoHead {
@@ -474,6 +465,28 @@ tr.dataListHeader a {
 
 div.memberBasketAction {
 	padding: 5px 0;
+}
+
+/* Form */
+div.block input.text {
+	width: 90%;
+	margin-bottom: 3px;
+	padding: .2em;
+}
+
+div.block select {
+	padding: .2em 0;
+}
+
+div.block input.button {
+	width: auto;
+	padding: .2em;
+}
+
+div.block.ui-form input,
+div.block.ui-form select
+{
+	padding: .4em;
 }
 
 /* Poyowa - List */

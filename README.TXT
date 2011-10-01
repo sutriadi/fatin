@@ -1,5 +1,5 @@
 Fatin Theme Base for SLiMS
-Version 3.15.2-0.1 RC2 build 21490327092011
+Version 3.15.2-0.1 RC3 build 18381101102011
 
 Copyright (c) 1432 H / 2011 M
 Indra Sutriadi Pipii (indra@sutriadi.web.id)
@@ -35,5 +35,10 @@ Daily Development: https://github.com/sutriadi/fatin
 - simpan konfigurasi
 
 CHANGELOG
-27.09.2011
-Kandidat Rilis 2
+01.10.2011
+Kandidat Rilis 3
+- penyesuaian halaman login petugas perpustakaan, visitor member
+- penambahan class CSS list, untuk block
+- pemisahan class CSS block untuk tema dasar dari tema Poyowa
+- penggunaan jQuery-UI untuk popup fileviewer
+- penambahan fitur tampil/sembunyi: logo, title, subtitle

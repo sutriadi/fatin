@@ -49,6 +49,9 @@ icons i-warn
 -- format list
 li-dark
 	list tanpa bullet dengan latar belakang gelap bila dilewati kursor mouse
+-- format formulir
+ui-form
+	formulir dengan gaya jQuery-UI
 
 # hanya untuk sidebar kiri dan kanan:
 -- latar belakang gelap

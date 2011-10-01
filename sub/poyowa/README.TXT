@@ -7,6 +7,6 @@ Indra Sutriadi Pipii (indra@sutriadi.web.id)
 Official Website: http://sutriadi.web.id/
 Daily Development: https://github.com/sutriadi/fatin
 
-Poyowa SLiMS Theme by default has been included in the package
-Fatin Theme Base. Poyowa SLiMS Theme can immediately used where
-Fatin Theme Base has been installed properly.
+Poyowa SLiMS theme by default has been included in the package Fatin.
+Poyowa theme can immediately used where Fatin base theme has been
+installed properly.

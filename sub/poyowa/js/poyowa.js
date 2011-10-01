@@ -26,18 +26,18 @@ Drupal.behaviors.poyowa_RoundedCorners = function (context) {
 }
 
 Drupal.behaviors.poyowa_SearchKeywords = function (context) {
-	var keywords = $("form#search-feature-theme-form input#keywords");
+	var keywords = $("form#search-feature-theme-form input#search-feature-keywords");
 	keywords.focus(function()
 	{
-		if(keywords.val()=='Keywords')
+		if(keywords.val()=='keywords')
 			keywords.val('');
 		else
 			keywords.select();
 	});
-	$("input#keywords").blur(function()
+	keywords.blur(function()
 	{
-		if(keywords.val()=='Keywords' || $.trim(keywords.val())=='')
-			keywords.val('Keywords');
+		if(keywords.val()=='keywords' || $.trim(keywords.val())=='')
+			keywords.val('keywords');
 	});
 }
 

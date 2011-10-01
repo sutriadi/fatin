@@ -3,7 +3,7 @@ name = Poyowa
 description = Advanced theme base on Fatin Base Theme. Tableless, multi-column, fixed width theme, with lots of extra style.
 version = 1.0-3.15.2-0.1
 core = 3.15.2-0.1
-build = 21520127092011
+build = 18381101102011
 clone = base
 screenshot = poyowa-screenshot.jpg
 
