@@ -4,7 +4,7 @@ Version 3.15.2-0.1 RC3 build 18381101102011
 Copyright (c) 1432 H / 2011 M
 Indra Sutriadi Pipii (indra@sutriadi.web.id)
 
-Official Website: http://sutriadi.web.id/fatin-theme-base
+Official Website: http://sutriadi.web.id/fatin
 Daily Development: https://github.com/sutriadi/fatin
 
 # Persyaratan System
