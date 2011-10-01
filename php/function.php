@@ -129,7 +129,7 @@ function set_search()
 		$q = trim($_GET['keywords']);
 	$websearch = '<form action="index.php" accept-charset="UTF-8" method="get" id="search-feature-theme-form">'
 		. '<input maxlength="128" name="keywords" value="' . $q . '" size="30" class="form-search-text" type="text" />'
-		. '<input name="search" value="' . __('Search') . '" class="form-search-input" type="submit" />'
+		. '<input name="search" value="' . __('Search!') . '" class="form-search-input" type="submit" />'
 		. '</form>';
 	return $websearch;
 }
@@ -231,4 +231,32 @@ function set_pageregions($blocks)
 		}
 	}
 	return $regions;
+}
+
+/*
+ *
+ * from http://www.phpro.org/examples/Get-Text-Between-Tags.html
+ * 
+ * @get text between tags
+ * @param string $tag The tag name
+ * @param string $html The XML or XHTML string
+ * @param int $strict Whether to use strict mode
+ * @return array
+ *
+ */
+function getTextBetweenTags($tag, $html, $strict=0)
+{
+    $dom = new domDocument;
+
+    if($strict==1)
+        $dom->loadXML($html);
+    else
+        $dom->loadHTML($html);
+
+    $dom->preserveWhiteSpace = false;
+    $content = $dom->getElementsByTagname($tag);
+    $out = array();
+    foreach ($content as $item)
+        $out[] = $item->nodeValue;
+    return $out;
 }

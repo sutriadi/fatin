@@ -25,9 +25,9 @@ function poyowa_set_search($keywords = '')
 	$q = '';
 	if (isset($_GET['keywords']))
 		$q = trim($_GET['keywords']);
-	$websearch = '<form action="' . SENAYAN_WEB_ROOT_DIR . '" accept-charset="UTF-8" method="get" id="search-feature-theme-form">'
-		. '<input maxlength="128" id="keywords" name="keywords" value="' . $q . '" size="30" class="form-search-text" type="text" />'
-		. '<input name="search" value="' . __('Go Search!') . '" class="form-search-input" type="submit" />'
+	$websearch = '<form action="' . SENAYAN_WEB_ROOT_DIR . '" accept-charset="UTF-8" method="get" id="search-feature-theme-form"> '
+		. '<input maxlength="128" id="search-feature-keywords" name="keywords" value="' . $q . '" size="30" type="text" /> '
+		. '<input name="search" id="search-feature-submit" value="' . __('Search!') . '" type="submit" /> '
 		. '</form>';
 	return $websearch;
 }

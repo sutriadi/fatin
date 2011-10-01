@@ -17,7 +17,7 @@
 //      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 //      MA 02110-1301, USA.
 
-Drupal.behaviors.saifanah_RoundedCorners = function (context) {
+Drupal.behaviors.poyowa_RoundedCorners = function (context) {
 	$("div.corner, div.corner-top, div.corner .header, div.corner-top .header").corner("top 5px");
 	$("div.corner, div.corner-bottom, div.corner .content, div.corner-bottom .content").corner("bottom 5px");
 	$("div#search").corner("bottom 10px");
@@ -25,7 +25,7 @@ Drupal.behaviors.saifanah_RoundedCorners = function (context) {
 	$("div#container").corner("bottom 10px keep");
 }
 
-Drupal.behaviors.saifanah_SearchKeywords = function (context) {
+Drupal.behaviors.poyowa_SearchKeywords = function (context) {
 	var keywords = $("form#search-feature-theme-form input#keywords");
 	keywords.focus(function()
 	{
@@ -39,4 +39,16 @@ Drupal.behaviors.saifanah_SearchKeywords = function (context) {
 		if(keywords.val()=='Keywords' || $.trim(keywords.val())=='')
 			keywords.val('Keywords');
 	});
+}
+
+Drupal.behaviors.poyowa_jqueryUI = function (context) {
+	$("#search-feature-theme-form input#search-feature-keywords").addClass("text ui-widget-content ui-corner-all");
+	$("#search-feature-theme-form input:submit").button().addClass("text");
+	$(".block.ui-form input[type=submit]").button();
+	$(".block.ui-form input#keywords").addClass("text ui-widget-content ui-corner-all");
+	$(".block.ui-form input[type=text], .block.ui-form input[type=password]").addClass("ui-widget-content ui-corner-all");
+	$(".block.ui-form select").addClass("ui-widget-content ui-corner-all");
+	$("#main-node #info-node").addClass("ui-state-highlight ui-corner-all");
+	$("div.errorBox").addClass("ui-state-error ui-corner-all");
+	//~ $("div.item input.biblioCheck").button();
 }

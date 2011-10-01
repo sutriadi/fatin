@@ -5,23 +5,8 @@ http://sutriadi.web.id/
 indra@sutriadi.web.id
 
 # untuk semua jenis block
--- gaya tulisan (bisa dikombinasikan)
-t-right
-	isi tulisan rata kanan
-t-justify
-	isi tulisan rata kiri-kanan
-t-center
-	isi tulisan rata tengah
-t-bold
-	isi tulisan huruf tebal
-t-italic
-	isi tulisan huruf miring
-t-underline
-	isi tulisan bergaris bawah
-t-shadow
-	isi tulisan huruf berbayangan
-
--- gaya sisi block (tidak bisa dikombinasikan)
+-- sudut melengkung pada block
+-- tidak bisa dikombinasikan
 corner
 	block dengan semua sudut melengkung radius 5px
 corner-top
@@ -29,8 +14,9 @@ corner-top
 corner-bottom
 	block dengan sudut sisi bawah melengkung radius 5px
 
--- gaya header block
--- (berlaku bila title tidak kosong dan tidak bisa dikombinasikan)
+-- ikon pada header block
+-- berlaku bila title tidak kosong
+-- tidak bisa dikombinasikan sesama
 icons i-chat
 	menampilkan ikon chat
 icons i-err
@@ -60,8 +46,12 @@ icons i-user
 icons i-warn
 	menampilkan ikon warning
 
+-- format list
+li-dark
+	list tanpa bullet dengan latar belakang gelap bila dilewati kursor mouse
+
 # hanya untuk sidebar kiri dan kanan:
--- gaya block
+-- latar belakang gelap
 dark
 	block dengan latar gelap
 

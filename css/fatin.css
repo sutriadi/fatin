@@ -19,6 +19,7 @@
  *      MA 02110-1301, USA.
  */
 
+/* Test Block Preferences */
 div.block-test {
 	background: #DFDFDF;
 	color: #000;
@@ -28,8 +29,51 @@ div.block-test {
 	padding: 3px;
 }
 
+/* File Viewer Frame */
 #fileviewer #framehtml {
 	border: none;
 	width: 100%;
 	height: 100%;
+}
+
+/* UI Auto Complete Loading Image */
+.ui-autocomplete-loading { background: white url('../img/ui-anim_basic_16x16.gif') right center no-repeat; }
+
+/* Fatin Core Template - Text */
+div.block.t-right .content { text-align: right; }
+div.block.t-justify .content { text-align: justify; }
+div.block.t-center .content { text-align: center; }
+div.block.t-bold .content { font-weight: bold; }
+div.block.t-italic .content { font-style: italic; }
+div.block.t-underline .content { text-decoration: underline; }
+div.block.t-shadow .content { text-shadow: #545454 1px 1px; }
+
+/* Fatin Core Template - List */
+.block.li-border ul.links {
+	padding: 0;
+	margin: 0;
+}
+
+.block.li-border ul.links li {
+	border-bottom: 1px solid #000;
+	display: block;
+	padding: 0;
+}
+
+.block.li-border ul.links li.active,
+.block.li-border ul.links li:hover {
+}
+
+.block.li-border ul.links li.last {
+	border-bottom: none;
+}
+
+.block.li-border ul.links li a {
+	display: block;
+	padding: 5px 0;
+	padding-left: 5px;
+}
+
+.block.li-border ul.links li:hover a,
+.block.li-border ul.links li.active a {
 }

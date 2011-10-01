@@ -1,0 +1,27 @@
+Global Additional CSS Cheat Sheet for Fatin Base Theme
+--
+by Indra Sutriadi Pipii
+http://sutriadi.web.id/
+indra@sutriadi.web.id
+
+# untuk semua jenis block
+-- format tulisan
+-- bisa dikombinasikan format tulisan lain
+t-right
+	isi tulisan rata kanan
+t-justify
+	isi tulisan rata kiri-kanan
+t-center
+	isi tulisan rata tengah
+t-bold
+	isi tulisan huruf tebal
+t-italic
+	isi tulisan huruf miring
+t-underline
+	isi tulisan bergaris bawah
+t-shadow
+	isi tulisan huruf berbayangan
+
+-- format list
+li-border
+	list tanpa bullet serta tampilan garis di bawah list

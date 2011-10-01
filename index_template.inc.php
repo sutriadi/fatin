@@ -54,6 +54,32 @@ $styles = '';
 $scripts = '';
 
 $node = $main_content;
+$div_node_info = '<div id="info-node"><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>%s</div>';
+if ( ! isset($_GET['p']) AND ! isset($_GET['plugin']))
+{
+	$node_info = sprintf($div_node_info, $info);
+}
+else if (isset($_GET['p']))
+{
+	if (strpos($info, 'div'))
+	{
+		$info = getTextBetweenTags('div', $info);
+		if (count($info) > 1)
+		{
+			$newinfo = array();
+			foreach ($info as $index => $subinfo)
+			{
+				$newinfo[] = sprintf('<span class="%s">%s</span>', $index, $subinfo);
+			}
+			$info = implode("\n", $newinfo);
+		}
+		else
+			$info = $info[0];
+	}
+	$node_info = sprintf($div_node_info, $info);
+}
+else
+	$node_info = $info;
 
 $left_node = '';
 $right_node = '';
@@ -65,11 +91,6 @@ $footer_node = '';
 $theme = variable_get('opac_theme');
 $theme_settings = (object) variable_get('theme_' . $theme . '_settings', defconf_theme(), 'serial');
 $theme_path = $sub . '/' . $theme;
-
-$web_logo = $img . '/fatin-logo.png';
-$web_title = $osys->library_name;
-$web_subtitle = $osys->library_subname;
-$web_footer = $osys->page_footer;
 
 if (file_exists($theme_path . '/fatin.php'))
 {
@@ -89,6 +110,13 @@ if (isset($theme_settings->main_links) AND $theme_settings->main_links == 'on')
 	$main_links_items = menu_items_get($main_links);
 	$web_main_links = menu_build_links($main_links_items, 0, $expand, 'main-links');
 }
+
+if (isset($theme_settings->logo) AND $theme_settings->search == 'on')
+	$web_logo = $img . '/fatin-logo.png';
+if (isset($theme_settings->title) AND $theme_settings->title == 'on')
+	$web_title = $osys->library_name;
+if (isset($theme_settings->subtitle) AND $theme_settings->subtitle == 'on')
+	$web_subtitle = $osys->library_subname;
 
 if (isset($theme_settings->search) AND $theme_settings->search == 'on')
 {
@@ -156,6 +184,8 @@ if ($detail === true)
 
 $webicon = set_webicon(isset($theme_info['webicon']) ? $theme_info['webicon'] : $img . '/fatin.ico');
 $page_metadata = set_pagemeta($metadata);
+
+$web_footer = $osys->page_footer;
 
 $info = $theme_info;
 require(MODPLUGINS_BASE_DIR . 's_blocks/func.php');

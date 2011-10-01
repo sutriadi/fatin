@@ -42,13 +42,13 @@ if ( ! defined('INDEX_AUTH') || INDEX_AUTH != 1)
 	<div id="container" class="<?php echo $layout_class; ?>">
 		
 		<div id="header">
-			<?php if(isset($regions['header'])):?><?php echo $blocks['header'];?><?php endif;?>
-			<div id="logo">
+			<?php if (isset($regions['header'])):?><?php echo $blocks['header'];?><?php endif;?>
+			<?php if (isset($web_logo)):?><div id="logo">
 				<a href="index.php" title="<?php echo __('Home'); ?>"><img src="<?php echo $web_logo;?>" /></a>
-			</div>
+			</div><?php endif;?>
 			<div id="web-name-wrapper">
-				<span id="web-title"><a href="index.php" title="<?php echo __('Home'); ?>"><?php echo $web_title;?></a></span>
-				<span id="web-subtitle"><?php echo $web_subtitle;?></span>
+				<?php if (isset($web_title)):?><span id="web-title"><a href="index.php" title="<?php echo __('Home'); ?>"><?php echo $web_title;?></a></span><?php endif;?>
+				<?php if (isset($web_subtitle)):?><span id="web-subtitle"><?php echo $web_subtitle;?></span><?php endif;?>
 			</div>
 			<?php echo isset($web_search) ? sprintf('<div id="search">%s</div>', $web_search) : '';?>
 			<?php echo isset($web_main_links) ? sprintf('<div id="main-links">%s</div>', $web_main_links) : '';?>
@@ -67,6 +67,7 @@ if ( ! defined('INDEX_AUTH') || INDEX_AUTH != 1)
 					</div><?php endif;?>
 					
 					<div id="main-node">
+						<?php echo (isset($node_info)) ? $node_info : '';?>
 						<?php echo $node;?>
 					</div>
 					
@@ -87,7 +88,7 @@ if ( ! defined('INDEX_AUTH') || INDEX_AUTH != 1)
 			<?php if (isset($regions['footer'])):?><?php echo $blocks['footer'];?><?php endif;?>
 			<div id="web-footer-wrapper">
 				<span id="web-footer"><?php echo $web_footer;?></span>
-				<span><strong>Fatin Core Template</strong> by <a href="http://sutriadi.web.id/" target="_blank">Indra Sutriadi Pipii</a></span>
+				<span><strong>Fatin base theme</strong> by <a href="http://sutriadi.web.id/" target="_blank">Indra Sutriadi Pipii</a></span>
 			</div>
 		</div>
 		

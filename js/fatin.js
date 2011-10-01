@@ -18,6 +18,57 @@
 //      MA 02110-1301, USA.
 
 $(document).ready(function() {
+
+	var cacheAuthor = {},
+			lastXhr;
+	var cacheSubject = {},
+			lastXhr;
+
+	$( "#subject" ).autocomplete({
+		minLength: 2,
+		source: function( request, response ) {
+			var term = request.term;
+			if ( term in cacheSubject ) {
+				response( cacheSubject[ term ] );
+				return;
+			}
+			lastXhr = $.ajax({
+				url: "lib/contents/advsearch_AJAX_response.php",
+				type: "POST",
+				data: "type=topic&inputSearchVal="+escape(term),
+				success: function( data, status, xhr ) {
+					var data = eval(data);
+					cacheSubject[ term ] = data;
+					if ( xhr === lastXhr ) {
+						response( data );
+					}
+				},
+			});
+		},
+	});
+
+	$( "#author" ).autocomplete({
+		minLength: 2,
+		source: function( request, response ) {
+			var term = request.term;
+			if ( term in cacheAuthor ) {
+				response( cacheAuthor[ term ] );
+				return;
+			}
+			lastXhr = $.ajax({
+				url: "lib/contents/advsearch_AJAX_response.php",
+				type: "POST",
+				data: "type=author&inputSearchVal="+escape(term),
+				success: function( data, status, xhr ) {
+					var data = eval(data);
+					cacheAuthor[ term ] = data;
+					if ( xhr === lastXhr ) {
+						response( data );
+					}
+				},
+			});
+		},
+	});
 	
 	$( "#fileviewer" ).dialog({
 		autoOpen: false,

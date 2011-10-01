@@ -19,9 +19,7 @@
  *      MA 02110-1301, USA.
  */
 
-/*
- * general formatting
- */
+/* General formatting */
 body {
 	background: #0B3E6F url(../images/ui-bg-blue-d.png) repeat fixed;
 	padding: 0;
@@ -30,12 +28,20 @@ body {
 	font-size: 80%;
 }
 
-/*
- * formatting design and layout
- */
+a {
+	color: #1D4C7A;
+	text-decoration: none;
+}
 
+a:hover {
+	text-decoration: underline;
+}
+
+/* Design and Layout */
+
+/* Container */
 #container {
-	background: #FFFFE5;
+	background: #EFFFF7;
 	width: 960px;
 	margin: 0 auto;
 	padding: 0 10px;
@@ -46,16 +52,19 @@ body {
 	margin-bottom: 5px;
 }
 
+/* Header */
 #header {
 	width: 100%;
 	padding-top: 0;
 }
 
+/* Logo at Header */
 #header #logo {
 	float: left;
 	margin: 10px 15px 0 0;
 }
 
+/* Wrapper of Title and Subtitle */
 #header #web-name-wrapper {
 	float: left;
 	margin: 10px 0 30px;
@@ -72,6 +81,12 @@ body {
 	right: 10px;
 	padding: 20px;
 	background: #004180;
+	margin-bottom: 10px;
+}
+
+#search-feature-theme-form input#search-feature-keywords,
+#search-feature-theme-form input#search-feature-submit {
+	padding: .4em;
 }
 
 #web-name-wrapper #web-title {
@@ -82,16 +97,17 @@ body {
 #web-name-wrapper #web-subtitle {
 	font-size: 12pt;
 	font-style: italic;
-	text-shadow: #E0E0E0 1px 1px;
+	text-shadow: #A3C1DF 1px 1px;
 }
 
+/* Main */
 #main {
 	width: 100%;
 	clear: both;
 }
 
+/* Left Bar */
 #leftbar {
-	float: left;
 }
 
 #leftbar .block {
@@ -126,6 +142,7 @@ body {
 	text-shadow: #545454 1px 1px;
 }
 
+/* Right Bar */
 #rightbar {
 	float: right;
 }
@@ -162,24 +179,68 @@ body {
 	text-shadow: #545454 1px 1px;
 }
 
+/* Center Bar */
 #nodebar {
 	float: left;
 	padding: 10px;
 }
 
-#top-node {
-	padding: 10px;
-	background: #98CB80;
-	margin: 10px 0;
+#main-node {
+	padding: 10px 0;
 }
 
-#bottom-node {
-	padding: 10px;
-	background: #DD1100;
-	color: #FFF;
+#main-node #info-node {
+	padding: .4em;
 	margin-bottom: 10px;
 }
 
+#main-node #info-node div {
+	padding: .4em;
+}
+
+#main-node div.errorBox {
+	padding: .4em;
+	margin: 5px 0;
+}
+
+/* Content Top */
+#top-node {
+	padding: 0px;
+	margin: 10px 0;
+}
+
+#top-node .block {
+	padding: 3px;
+	background: #173A14;
+}
+
+/* Content Bottom */
+#bottom-node {
+	padding: 0px;
+	margin-bottom: 10px;
+}
+
+#bottom-node .block {
+	padding: 3px;
+	background: #6D0D54;
+}
+
+#top-node .block .header,
+#bottom-node .block .header {
+	color: #F3FF1E;
+	padding: 5px;
+	margin: 0;
+	text-shadow: #FAFFA4 1px 1px;
+}
+
+#top-node .block .content,
+#bottom-node .block .content {
+	padding: 5px 3px;
+	background: #FFF;
+	margin: 0;
+}
+
+/* Footer */
 #footer {
 	width: 100%;
 	clear: both;
@@ -200,9 +261,7 @@ body {
 	text-align: center;
 }
 
-/*
- * Formatting links
- */
+/* Links */
 ul.links {
 }
 
@@ -227,15 +286,15 @@ ul.links li.last {
 }
 
 ul.links li.active {
+	color: #1A324A;
+	font-weight: bold;
 }
 
 ul.main-links li a {
 	margin: 0;
 }
 
-/*
- * Formatting main-links
- */
+/* Poyowa - Main Links */
 div#main-links {
 	clear: both;
 	position: relative;
@@ -274,49 +333,203 @@ div#main-links ul li a:hover, div#main-links ul li a.active {
 	background: transparent url(../images/blueslate_backgroundOVER.gif) no-repeat top center;
 }
 
-/*
- * Formating SLiMS Content and Layout
- */
+/* Formatting SLiMS content and layout */
 div.biblioPaging {
 	text-align: center;
 }
 
 span.pagingList {
-	
 }
 
-/*
- * Form formatting
- */
+span.pagingList span {
+	padding: 0;
+}
+
+div.item {
+	padding-left: 55px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom:10px;
+}
+
+div.alterList {
+}
+
+div.alterList2 {
+	background: #C9D4DF;
+}
+
+div.item {
+	background-position: 6px 10px;
+}
+
+div.item a {
+}
+
+div.item a.titleField {
+	font-weight: bold;
+}
+
+div.item div.subItem {
+}
+
+div.item div.authorField {
+	padding: 5px 0;
+}
+
+div.item div.authorField b {
+}
+
+div.item div.subItem a {
+	padding: 2px;
+	text-decoration: none;
+}
+
+div.subItem span.ui-button-text {
+	padding: 0 5px;
+}
+
+div.item input.biblioCheck {
+	display: inline; 
+}
+
+div.item div.subItem a.detailLink {
+	background: #1A324A;
+	color: #FFF;
+}
+
+div.item div.subItem a.xmlDetailLink {
+	background: #7A1505;
+	color: #FFF;
+}
+
+div.item div.subItem a:hover {
+	background: #FFEF04;
+	color: #000;
+}
+
+div a.xmlResultLink {
+	background: #404040;
+	color: #FFF;
+	padding: 5px;
+	text-decoration: none;
+}
+
+div a.xmlResultLink:hover {
+	background: #370D57;
+}
+
+/* Form */
 div.block input.text {
 	width: 90%;
+	margin-bottom: 3px;
+	padding: .2em;
+}
+
+div.block select {
+	padding: .2em 0;
 }
 
 div.block input.button {
 	width: auto;
+	padding: .2em;
 }
 
-/*
- * block content basic styles
- */
-div.block.t-right .content { text-align: right; }
-div.block.t-justify .content { text-align: justify; }
-div.block.t-center .content { text-align: center; }
-div.block.t-bold .content { font-weight: bold; }
-div.block.t-italic .content { font-style: italic; }
-div.block.t-underline .content { text-decoration: underline; }
-div.block.t-shadow .content { text-shadow: #545454 1px 1px; }
+div.block.ui-form input,
+div.block.ui-form select
+{
+	padding: .4em;
+}
 
-/*
- * block content styles
- */
+div.loginInfo {
+	margin: 5px 0;
+}
+
+#memberLogin input {
+	padding: .2em;
+}
+
+h3.memberInfoHead {
+	background: #0D5748;
+	padding: 5px;
+	color: #FFF;
+}
+
+tr.dataListHeader {
+	background: #626262;
+}
+
+table.memberLoanList {
+	margin: 5px 0;
+}
+
+table.memberLoanList tr.alterCell {
+	background: #DEDEDE;
+}
+
+tr.dataListHeader a {
+	color: #FFF;
+	text-shadow: #333 1px 1px;
+}
+
+div.memberBasketAction {
+	padding: 5px 0;
+}
+
+/* Poyowa - List */
+.block.li-dark ul.links {
+	padding: 0;
+	margin: 0;
+}
+
+.block.li-dark ul.links li {
+	border-bottom: 1px solid #F8F8F8;
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+.block.li-dark ul.links li.active,
+.block.li-dark ul.links li:hover {
+	background: #2E91E9;
+}
+
+.block.li-dark ul.links li.last {
+	border-bottom: none;
+}
+
+.block.li-dark ul.links li a {
+	display: block;
+	text-decoration: none;
+	padding: 5px 0;
+	padding-left: 5px;
+}
+
+.block.li-dark ul.links li:hover a,
+.block.li-dark ul.links li.active a {
+	color: #FFF;
+}
+
+#rightbar .block ul.links li a {
+	color: #7A1505;
+}
+
+#rightbar .block.li-dark ul.links li:hover a,
+#rightbar .block.li-dark ul.links li.active a {
+	color: #FFF;
+}
+
+#rightbar .block.li-dark ul.links li.active,
+#rightbar .block.li-dark ul.links li:hover {
+	background: #BE2E17;
+}
+
+/* Poyowa - Dark */
 #leftbar .dark .content a,
 #rightbar .dark .content a
 { color: #FFF; }
 
-/*
- * block header icons
- */
+/* Poyowa - Icons */
 #container div.icons h3.header { text-align: right; padding: 10px; }
 #leftbar div.icons h3.header,
 #rightbar div.icons h3.header

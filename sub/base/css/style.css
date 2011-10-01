@@ -19,9 +19,7 @@
  *      MA 02110-1301, USA.
  */
 
-/*
- * general formatting
- */
+/* General formatting */
 body {
 	padding: 0;
 	margin: 0;
@@ -29,10 +27,9 @@ body {
 	font-size: 80%;
 }
 
-/*
- * formatting design and layout
- */
+/* Design and Layout */
 
+/* Container */
 #container {
 	width: 960px;
 	margin: 0 auto;
@@ -41,15 +38,18 @@ body {
 	margin-bottom: 5px;
 }
 
+/* Header */
 #header {
 	width: 100%;
 	padding: 10px 0;
 }
 
+/* Logo at Header */
 #header #logo {
 	margin: 0 15px 0 0;
 }
 
+/* Wrapper of Title and Subtitle */
 #header #web-name-wrapper {
 }
 
@@ -70,6 +70,7 @@ body {
 	font-style: italic;
 }
 
+/* Main */
 #main {
 	width: 100%;
 	clear: both;
@@ -88,6 +89,7 @@ div#container.right #leftbar {
 	display: none;
 }
 
+/* Left Bar */
 #leftbar .block {
 	margin: 10px auto;
 }
@@ -114,6 +116,7 @@ div#container.none #rightbar {
 	display: none;
 }
 
+/* Right Bar */
 #rightbar .block {
 	margin: 10px auto;
 }
@@ -127,6 +130,7 @@ div#container.none #rightbar {
 	padding: 5px 3px;
 }
 
+/* Center Bar */
 #nodebar {
 	float: left;
 	padding: 0 10px;
@@ -153,20 +157,24 @@ div#container.none #nodebar {
 	clear: both;
 }
 
+/* Content Top */
 #top-node {
 	padding: 10px;
 	margin-bottom: 10px;
 }
 
+/* Main Content */
 #main-node {
 	padding: 10px;
 }
 
+/* Content Bottom */
 #bottom-node {
 	padding: 10px;
 	margin-bottom: 10px;
 }
 
+/* Footer */
 #footer {
 	width: 100%;
 	clear: both;
@@ -186,11 +194,10 @@ div#container.none #nodebar {
 	text-align: center;
 }
 
-/*
- * Formatting core blocks
- */
+/* Formatting core blocks */
 div.block label {
 	display: block;
+	padding: 2px 0;
 }
 
 div.advanced_search input,
@@ -203,9 +210,7 @@ label {
 	cursor: hand;
 }
 
-/*
- * Formatting links
- */
+/* Formatting links */
 ul.links {
 }
 
@@ -233,9 +238,7 @@ ul.links li.last {
 ul.links li.active {
 }
 
-/*
- * Formatting SLiMS content and layout
- */
+/* Formatting SLiMS content and layout */
 div.biblioPaging {
 }
 
