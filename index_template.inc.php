@@ -158,7 +158,7 @@ if ($clone === true)
 }
 if ( ! isset($theme_info['stylesheets']))
 	$theme_info['stylesheets'] = array();
-$theme_info['stylesheets']['all'][] = '../../../../admin/modules/plugins/'. css_get();
+$theme_info['stylesheets']['all'][] = '../../../../admin/modules/plugins/'. css_get('opac');
 
 $styles = array_merge($styles, set_styles_array(isset($theme_info['stylesheets']) ? $theme_info['stylesheets'] : array(), $theme_path));
 $scripts = array_merge($scripts, set_scripts_array(isset($theme_info['scripts']) ? $theme_info['scripts'] : array(), $theme_path));

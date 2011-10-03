@@ -211,7 +211,7 @@ a:hover {
 
 #top-node .block {
 	padding: 3px;
-	background: #173A14;
+	background: #44B3E5;
 }
 
 /* Content Bottom */
@@ -222,15 +222,15 @@ a:hover {
 
 #bottom-node .block {
 	padding: 3px;
-	background: #6D0D54;
+	background: #845644;
 }
 
 #top-node .block .header,
 #bottom-node .block .header {
-	color: #F3FF1E;
+	color: #FFF;
 	padding: 5px;
 	margin: 0;
-	text-shadow: #FAFFA4 1px 1px;
+	text-shadow: #CCC 1px 1px;
 }
 
 #top-node .block .content,

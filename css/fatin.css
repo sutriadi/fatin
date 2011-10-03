@@ -29,6 +29,9 @@ div.block-test {
 	padding: 3px;
 }
 
+/* Global */
+img { border: none; }
+
 /* File Viewer Frame */
 #fileviewer #framehtml {
 	border: none;
